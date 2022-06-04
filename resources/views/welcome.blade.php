@@ -3,10 +3,8 @@
 
 @if ($message = Session::get('success'))
 <div class="alert alert-success alert-block">
-    <button type="button" class="close" data-dismiss="alert">×</button>
     <strong>{{ $message }}</strong>
 </div>
-<img src="uploads/{{ Session::get('file') }}">
 @endif
 @if (count($errors) > 0)
 <div class="alert alert-danger">
@@ -19,9 +17,7 @@
 </div>
 @endif
 <div class="row">
-    <div class="col-sm-4">
-
-
+    <div class="col-sm-6">
         <form action="{{ route('file.upload') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
